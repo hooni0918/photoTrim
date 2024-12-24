@@ -1,5 +1,3 @@
-# photoTrim
-
 # PhotoTrim
 
 PhotoTrim is a powerful and intuitive image cropping library designed for iOS applications. Built with user experience as the top priority, it offers smooth gesture handling and an elegant UI.
