@@ -1,5 +1,6 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
+
 import UIKit
 
 public class PhotoTrimView: UIView {
@@ -196,63 +197,5 @@ extension PhotoTrimView: UIGestureRecognizerDelegate {
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
                                  shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
-    }
-}
-
-// CropAreaView.swift
-public class CropAreaView: UIView {
-    public override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        
-        self.backgroundColor?.setFill()
-        UIRectFill(rect)
-        
-        let layer = CAShapeLayer()
-        let path = CGMutablePath()
-        
-        // Create circular crop area
-        path.addRoundedRect(
-            in: bounds,
-            cornerWidth: bounds.width/2,
-            cornerHeight: bounds.width/2
-        )
-        path.addRect(bounds)
-        
-        layer.path = path
-        layer.fillRule = .evenOdd
-        
-        self.layer.mask = layer
-    }
-}
-
-// PhotoTrimmer.swift
-public class PhotoTrimmer {
-    public static func crop(_ image: UIImage?,
-                          cropRect: CGRect,
-                          imageViewFrame: CGRect) -> UIImage? {
-        guard let image = image else { return nil }
-        
-        let xCrop = cropRect.minX - imageViewFrame.minX
-        let yCrop = cropRect.minY - imageViewFrame.minY
-        let widthCrop = cropRect.width
-        let heightCrop = cropRect.height
-        
-        // Calculate scale ratio between original image and displayed image
-        let scaleRatio = image.size.width / imageViewFrame.width
-        
-        // Create scaled crop rect
-        let scaledCropRect = CGRect(
-            x: xCrop * scaleRatio,
-            y: yCrop * scaleRatio,
-            width: widthCrop * scaleRatio,
-            height: heightCrop * scaleRatio
-        )
-        
-        // Perform cropping
-        guard let cutImageRef = image.cgImage?.cropping(to: scaledCropRect) else {
-            return nil
-        }
-        
-        return UIImage(cgImage: cutImageRef)
     }
 }
