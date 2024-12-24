@@ -4,6 +4,10 @@
 //
 //  Created by 이지훈 on 12/24/24.
 //
+//  Copyright (c) 2024 hooni0918. All rights reserved.
+//  This source code is licensed under the MIT license found in the LICENSE file
+//  in the root directory of this source tree.
+//
 
 import UIKit
 

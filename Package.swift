@@ -5,20 +5,39 @@ import PackageDescription
 
 let package = Package(
     name: "PhotoTrim",
+    platforms: [
+        // iOS 11 이상을 지원하도록 설정
+        .iOS(.v11)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "PhotoTrim",
+            // dynamic linking을 지원하도록 설정
+            type: .dynamic,
             targets: ["PhotoTrim"]),
     ],
+    dependencies: [
+        // 외부 종속성이 필요한 경우 여기에 추가
+    ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "PhotoTrim"),
+            name: "PhotoTrim",
+            dependencies: [],
+            // 리소스 파일이 필요한 경우를 대비한 설정
+            resources: [
+                .process("Resources")
+            ],
+            // Swift 언어 관련 설정 추가
+            swiftSettings: [
+                .enableUpcomingFeature("BareSlashRegexLiterals"),
+                .enableExperimentalFeature("StrictConcurrency")
+            ]
+        ),
         .testTarget(
             name: "PhotoTrimTests",
             dependencies: ["PhotoTrim"]
         ),
-    ]
+    ],
+    // 지원하는 Swift 버전 명시
+    swiftLanguageVersions: [.v5]
 )

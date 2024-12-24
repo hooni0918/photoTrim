@@ -1,5 +1,13 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
+//
+//  PhotoTrimView.swift
+//  PhotoTrim
+//
+//  Created by hooni0918 on 2024/01/10.
+//
+//  Copyright (c) 2024 hooni0918. All rights reserved.
+//  This source code is licensed under the MIT license found in the LICENSE file
+//  in the root directory of this source tree.
+//
 
 import UIKit
 
