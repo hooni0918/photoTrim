@@ -6,6 +6,18 @@ PhotoTrim is available under the MIT license. See the [LICENSE](LICENSE) file fo
 
 PhotoTrim is a powerful and intuitive image cropping library designed for iOS applications. Built with user experience as the top priority, it offers smooth gesture handling and an elegant UI.
 
+PhotoTrim is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7e85c2c9-ef16-40de-b015-b60aea8927cc" width="250" /> 
+     <img src="https://github.com/user-attachments/assets/360e3b4f-22cc-4e90-bbc9-766d2e88e8f8" width="250" />
+
+  <img src="https://github.com/user-attachments/assets/5327b9ae-4b2e-42d0-8303-cc6ca4c2eca6" width="250" />
+</p>
+
+# PhotoTrim
+PhotoTrim is a powerful
+
 ## Key Features
 
 PhotoTrim offers the following core functionalities:
